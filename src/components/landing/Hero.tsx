@@ -5,14 +5,14 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden pb-10 pt-4 sm:pb-14"
+      className="relative isolate overflow-hidden pb-10 sm:pb-14"
     >
-      {/* Full-bleed background image */}
-      <div className="relative mx-2 overflow-hidden rounded-[2rem] sm:mx-4 lg:mx-6">
+      {/* Full-bleed background image — cobre topo, curva embaixo */}
+      <div className="relative overflow-hidden rounded-b-[2.5rem] sm:rounded-b-[3rem]">
         <img
           src={heroImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="h-[640px] w-full object-cover sm:h-[720px] lg:h-[760px]"
+          className="h-[640px] w-full object-cover sm:h-[720px] lg:h-[820px]"
           fetchPriority="high"
         />
 
@@ -28,8 +28,7 @@ export function Hero() {
             <h1 className="font-display text-4xl leading-[1.05] text-primary-foreground drop-shadow-md sm:text-5xl lg:text-6xl">
               Descubra
               <span className="block">JERICOACOARA</span>
-              <span className="block">com quem é</span>
-              <span className="block">da casa.</span>
+              <span className="block">com quem é da casa.</span>
             </h1>
             <p className="mt-5 text-sm font-medium leading-relaxed text-primary-foreground/95 drop-shadow sm:text-base">
               Jerilifetur é uma empresa 100% nativa, formada por guias locais
