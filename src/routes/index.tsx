@@ -1,26 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/landing/Header";
+import { Hero } from "@/components/landing/Hero";
+import { ToursSection } from "@/components/landing/ToursSection";
+import { RideTypes } from "@/components/landing/RideTypes";
+import { KiteTransferBand } from "@/components/landing/KiteTransferBand";
+import { WhyUs } from "@/components/landing/WhyUs";
+import { BeyondRoutes } from "@/components/landing/BeyondRoutes";
+import { ReadyCTA } from "@/components/landing/ReadyCTA";
+import { Footer } from "@/components/landing/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <ToursSection />
+      <RideTypes />
+      <KiteTransferBand />
+      <WhyUs />
+      <BeyondRoutes />
+      <ReadyCTA />
+      <Footer />
+    </main>
+  );
 }
