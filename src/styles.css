@@ -65,8 +65,8 @@
 :root {
   --radius: 1rem;
 
-  /* Light neutral background instead of flat grey */
-  --background: oklch(0.99 0 0);
+  /* Sandy off-white background like the Figma */
+  --background: oklch(0.975 0.012 85);
   --foreground: oklch(0.22 0.08 250);
 
   --card: oklch(1 0 0);
