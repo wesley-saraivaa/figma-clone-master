@@ -14,7 +14,7 @@ export function Hero() {
         <img
           src={praiaImg}
           alt="Pedra furada de Jericoacoara"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
           fetchPriority="high"
         />
 
