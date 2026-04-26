@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/hero-jeri.png";
+import praiaImg from "@/assets/hero-praia.png";
+import buggyImg from "@/assets/hero-buggy.png";
+import placasImg from "@/assets/hero-placas.png";
 
 export function Hero() {
   return (
@@ -7,23 +9,37 @@ export function Hero() {
       id="home"
       className="relative isolate overflow-hidden"
     >
-      {/* Full-bleed background image */}
-      <div className="relative w-full overflow-hidden">
+      {/* Background beach image (full bleed) */}
+      <div className="relative w-full min-h-[640px] sm:min-h-[720px] lg:min-h-[820px]">
         <img
-          src={heroImg}
-          alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="block w-full h-auto"
+          src={praiaImg}
+          alt="Pedra furada de Jericoacoara"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           fetchPriority="high"
         />
 
-        {/* Soft gradient for legibility on the left */}
+        {/* Soft gradient for legibility */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-background/10 via-transparent to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-transparent"
+        />
+
+        {/* Left side: colorful signs */}
+        <img
+          src={placasImg}
+          alt="Placas coloridas com palavras inspiradoras"
+          className="pointer-events-none absolute left-0 top-1/2 hidden h-[90%] -translate-y-1/2 select-none object-contain object-left sm:block"
+        />
+
+        {/* Right side: couple on buggy */}
+        <img
+          src={buggyImg}
+          alt="Casal em buggy vermelho na praia de Jericoacoara"
+          className="pointer-events-none absolute bottom-0 right-0 h-[85%] max-w-[60%] select-none object-contain object-bottom sm:h-[90%]"
         />
 
         {/* Content overlay */}
-        <div className="absolute inset-0 flex items-center px-4 pt-24 sm:px-8 lg:px-16">
+        <div className="relative z-10 flex min-h-[640px] items-center px-4 pt-24 sm:min-h-[720px] sm:px-8 lg:min-h-[820px] lg:px-16">
           <div className="w-full max-w-xl rounded-3xl bg-card/35 p-6 shadow-card ring-1 ring-card/40 backdrop-blur-md sm:p-8">
             <h1 className="font-display text-4xl leading-[1.05] text-primary-foreground drop-shadow-md sm:text-5xl lg:text-6xl">
               Descubra
