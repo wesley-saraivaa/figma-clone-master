@@ -5,14 +5,14 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden pb-10 pt-4 sm:pb-14"
+      className="relative isolate overflow-hidden"
     >
       {/* Full-bleed background image */}
-      <div className="relative mx-2 overflow-hidden rounded-[2rem] sm:mx-4 lg:mx-6">
+      <div className="relative w-full overflow-hidden">
         <img
           src={heroImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="h-[640px] w-full object-cover sm:h-[720px] lg:h-[760px]"
+          className="h-[640px] w-full object-cover sm:h-[720px] lg:h-[820px]"
           fetchPriority="high"
         />
 
