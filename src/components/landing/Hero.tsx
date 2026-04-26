@@ -12,7 +12,7 @@ export function Hero() {
         <img
           src={heroImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="h-[640px] w-full object-cover object-right sm:h-[720px] lg:h-[820px]"
+          className="block w-full h-auto object-cover object-right min-h-[640px]"
           fetchPriority="high"
         />
 
