@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/hero-jeri.png";
+
+const heroImg =
+  "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=2400&q=80";
 
 export function Hero() {
   return (
