@@ -65,8 +65,8 @@
 :root {
   --radius: 1rem;
 
-  /* Light gray background (#ECECEC) */
-  --background: oklch(0.929 0 0);
+  /* Light neutral background instead of flat grey */
+  --background: oklch(0.99 0 0);
   --foreground: oklch(0.22 0.08 250);
 
   --card: oklch(1 0 0);
