@@ -7,11 +7,11 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate">
       <div className="relative w-full min-h-[640px] h-[min(900px,calc(100vw*0.64))] overflow-hidden rounded-b-[2.5rem]">
-        {/* Fundo: praia */}
+        {/* Fundo: praia — focado na parte alta para revelar mais areia embaixo */}
         <img
           src={praiaImg}
           alt="Pedra furada de Jericoacoara"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
           fetchPriority="high"
         />
 
@@ -26,7 +26,7 @@ export function Hero() {
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[80vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(440px,60vw,920px)]"
+          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[90vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(520px,68vw,1080px)]"
         />
 
         {/* Card + botões agrupados no canto superior esquerdo */}
