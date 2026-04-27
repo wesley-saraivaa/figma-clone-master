@@ -26,7 +26,7 @@ export function Hero() {
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[80vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(440px,60vw,920px)]"
+          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[90vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(520px,68vw,1080px)]"
         />
 
         {/* Card + botões agrupados no canto superior esquerdo */}
