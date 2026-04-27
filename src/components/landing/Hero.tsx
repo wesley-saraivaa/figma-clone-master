@@ -23,11 +23,11 @@ export function Hero() {
           className="pointer-events-none absolute bottom-0 left-0 z-10 hidden h-auto w-[clamp(180px,22vw,360px)] select-none object-contain object-left-bottom md:block"
         />
 
-        {/* Buggy (direita, na areia) — proporcional à largura */}
+        {/* Buggy (direita, na areia) — ancorado no chão da seção */}
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-[3%] right-[-2%] z-10 h-auto w-[60vw] max-w-none select-none object-contain sm:right-[1%] sm:w-[clamp(280px,38vw,640px)]"
+          className="pointer-events-none absolute -bottom-[2%] right-[-4%] z-10 h-auto w-[55vw] max-w-none select-none object-contain sm:right-[2%] sm:w-[clamp(260px,34vw,560px)]"
         />
 
         {/* Card de conteúdo */}
