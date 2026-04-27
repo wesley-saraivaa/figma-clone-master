@@ -7,11 +7,11 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate">
       <div className="relative w-full min-h-[640px] h-[min(900px,calc(100vw*0.64))] overflow-hidden rounded-b-[2.5rem]">
-        {/* Fundo: praia */}
+        {/* Fundo: praia — focado na parte alta para revelar mais areia embaixo */}
         <img
           src={praiaImg}
           alt="Pedra furada de Jericoacoara"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
           fetchPriority="high"
         />
 
