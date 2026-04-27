@@ -5,8 +5,8 @@ import placasImg from "@/assets/hero-placas.png";
 
 export function Hero() {
   return (
-    <section id="home" className="relative isolate px-2 sm:px-4">
-      <div className="relative w-full min-h-[620px] h-[min(880px,calc(100vw*0.62))] overflow-hidden rounded-b-[2.5rem]">
+    <section id="home" className="relative isolate">
+      <div className="relative w-full min-h-[640px] h-[min(900px,calc(100vw*0.64))] overflow-hidden rounded-b-[2.5rem]">
         {/* Fundo: praia */}
         <img
           src={praiaImg}
@@ -22,15 +22,15 @@ export function Hero() {
           className="pointer-events-none absolute bottom-0 left-[-7%] z-10 hidden h-auto w-[clamp(150px,16vw,260px)] select-none object-contain object-left-bottom md:block"
         />
 
-        {/* Buggy (direita, na areia) */}
+        {/* Buggy (direita, na areia) — grande como no print */}
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-0 right-[-2%] z-10 h-auto w-[70vw] max-w-none select-none object-contain sm:right-0 sm:w-[clamp(380px,52vw,820px)]"
+          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[80vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(440px,60vw,920px)]"
         />
 
         {/* Card + botões agrupados no canto superior esquerdo */}
-        <div className="absolute left-0 top-0 z-20 flex w-full max-w-md flex-col gap-4 px-4 pt-24 sm:max-w-lg sm:px-8 md:pl-[clamp(60px,8vw,140px)] md:pt-28">
+        <div className="absolute left-0 top-0 z-20 flex w-full max-w-md flex-col gap-4 px-4 pt-20 sm:max-w-[460px] sm:px-6 sm:pt-24 md:pl-[clamp(40px,6vw,110px)]">
           <div className="rounded-3xl bg-primary/30 p-6 shadow-card ring-1 ring-card/30 backdrop-blur-md sm:p-7">
             <h1 className="font-display text-4xl leading-[1.05] text-primary-foreground drop-shadow-md sm:text-5xl lg:text-[3.25rem]">
               Descubra
