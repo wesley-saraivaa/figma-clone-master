@@ -5,8 +5,8 @@ import placasImg from "@/assets/hero-placas.png";
 
 export function Hero() {
   return (
-    <section id="home" className="relative isolate px-2 sm:px-4">
-      <div className="relative w-full min-h-[620px] h-[min(880px,calc(100vw*0.62))] overflow-hidden rounded-b-[2.5rem]">
+    <section id="home" className="relative isolate">
+      <div className="relative w-full min-h-[640px] h-[min(900px,calc(100vw*0.64))] overflow-hidden rounded-b-[2.5rem]">
         {/* Fundo: praia */}
         <img
           src={praiaImg}
