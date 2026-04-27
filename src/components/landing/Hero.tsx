@@ -22,11 +22,11 @@ export function Hero() {
           className="pointer-events-none absolute bottom-0 left-[-7%] z-10 hidden h-auto w-[clamp(150px,16vw,260px)] select-none object-contain object-left-bottom md:block"
         />
 
-        {/* Buggy (direita, na areia) */}
+        {/* Buggy (direita, na areia) — grande como no print */}
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-0 right-[-2%] z-10 h-auto w-[70vw] max-w-none select-none object-contain sm:right-0 sm:w-[clamp(380px,52vw,820px)]"
+          className="pointer-events-none absolute bottom-0 right-[-4%] z-10 h-auto w-[80vw] max-w-none select-none object-contain sm:right-[-2%] sm:w-[clamp(440px,60vw,920px)]"
         />
 
         {/* Card + botões agrupados no canto superior esquerdo */}
