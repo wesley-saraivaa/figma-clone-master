@@ -5,12 +5,10 @@ import placasImg from "@/assets/hero-placas.png";
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative isolate overflow-hidden"
-    >
-      <div className="relative w-full min-h-[640px] sm:min-h-[720px] lg:min-h-[820px]">
-        {/* Background beach image (full bleed) */}
+    <section id="home" className="relative isolate overflow-hidden">
+      {/* Altura proporcional à largura: mantém a mesma composição em qualquer tela */}
+      <div className="relative w-full min-h-[560px] h-[min(820px,calc(100vw*0.62))]">
+        {/* Fundo: praia */}
         <img
           src={praiaImg}
           alt="Pedra furada de Jericoacoara"
@@ -18,23 +16,23 @@ export function Hero() {
           fetchPriority="high"
         />
 
-        {/* Left side: colorful signs */}
+        {/* Placas (esquerda, ancoradas no chão) — só md+ */}
         <img
           src={placasImg}
           alt="Placas coloridas com palavras inspiradoras"
-          className="pointer-events-none absolute left-0 top-1/2 z-10 hidden h-[95%] -translate-y-1/2 select-none object-contain object-left sm:block"
+          className="pointer-events-none absolute bottom-0 left-0 z-10 hidden h-auto w-[clamp(180px,22vw,360px)] select-none object-contain object-left-bottom md:block"
         />
 
-        {/* Right side: couple on buggy — sits on the sand */}
+        {/* Buggy (direita, na areia) — proporcional à largura */}
         <img
           src={buggyImg}
           alt="Casal em buggy vermelho na praia de Jericoacoara"
-          className="pointer-events-none absolute bottom-0 right-0 z-10 h-[70%] max-w-[55%] select-none object-contain object-bottom sm:h-[78%] lg:h-[82%]"
+          className="pointer-events-none absolute bottom-[3%] right-[-2%] z-10 h-auto w-[60vw] max-w-none select-none object-contain sm:right-[1%] sm:w-[clamp(280px,38vw,640px)]"
         />
 
-        {/* Content overlay — smaller card, centered (not over the signs) */}
-        <div className="relative z-20 flex min-h-[640px] items-center px-4 pt-24 sm:min-h-[720px] sm:px-8 lg:min-h-[820px] lg:px-16">
-          <div className="ml-0 w-full max-w-md rounded-3xl bg-card/35 p-5 shadow-card ring-1 ring-card/40 backdrop-blur-md sm:ml-[18%] sm:p-6 lg:ml-[20%]">
+        {/* Card de conteúdo */}
+        <div className="absolute inset-0 z-20 flex items-center px-4 pt-20 sm:px-6 md:pt-24">
+          <div className="w-full max-w-sm rounded-3xl bg-card/35 p-5 shadow-card ring-1 ring-card/40 backdrop-blur-md mx-auto md:mx-0 md:max-w-md md:ml-[clamp(200px,24vw,380px)] md:p-6">
             <h1 className="font-display text-3xl leading-[1.05] text-primary-foreground drop-shadow-md sm:text-4xl lg:text-5xl">
               Descubra
               <span className="block">JERICOACOARA</span>
