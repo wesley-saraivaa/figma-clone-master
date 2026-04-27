@@ -1,60 +1,56 @@
-# Landing Page Jerilifetur
+# Plano: Hero responsivo e bem ajustado
 
-Vamos recriar a landing page de turismo em Jericoacoara seguindo fielmente o layout do Figma, com fotos reais do Unsplash e textos em português.
+## Problema atual
 
-## Estrutura da página (single page, ordem do Figma)
+Hoje os 3 elementos do Hero usam estratégias diferentes e desconectadas:
 
-1. **Header fixo** — logo "Jerilifetur" à esquerda, menu (Home, Tours, Sobre, Contato), botão "Login" à direita. Fundo branco translúcido sobre o hero.
+- **Fundo (praia)**: `object-cover` — escala bem.
+- **Placas**: `h-[95%]` da seção (altura fixa muito grande), escondidas em mobile (`hidden sm:block`).
+- **Buggy**: `h-[70%–82%]` da seção + `max-w-[55%]` — a altura da seção é fixa em px (`min-h-[640/720/820px]`), então o buggy fica gigante em telas estreitas (ocupa mais de meia tela) e minúsculo em telas largas. Em larguras intermediárias (~1000–1200px, como a viewport atual de 1092px) ele "corta" a placa e invade o card.
 
-2. **Hero** — foto grande de buggy na praia de Jericoacoara, com título "Descubra Jericoacoara com quem é da casa", parágrafo curto e dois botões (CTA azul "Agendar passeio" + secundário "Mensagem"). Padrão de losangos azul-claro nas laterais (textura decorativa).
+Resultado: a composição que combina bem em uma largura quebra nas outras.
 
-3. **Tours Lado Leste** — título display, subtítulo, grade de 4 cards de passeios (Lagoa do Paraíso, Lagoa Azul, Árvore da Preguiça, Pedra Furada) com foto, estrelas, nome e descrição curta.
+## Solução
 
-4. **Tours Lado Oeste** — mesma estrutura, 4 cards (Pôr do Sol / Duna do Pôr do Sol, Lagoa do Tatajuba, Dunas Móveis, Vila e Ilhas Místicas).
+Tornar o Hero **proporcional à largura** (não a uma altura px fixa) e dimensionar cada peça em `vw`/`%` da própria largura, com clamps mínimos/máximos. Assim os 3 elementos crescem/encolhem juntos mantendo a mesma composição do print.
 
-5. **Tipos de passeio** — linha com 3 pílulas/botões coloridos: BUGGY, QUADRI, TRANSFER, com legenda "Oferecemos passeios privativos ou compartilhados em:".
+### 1. Container do Hero
 
-6. **Faixa azul com 2 cards horizontais grandes**:
-   - Kite Trips & Downwind (foto + texto)
-   - Transfer e Logística (foto + texto)
-   Fundo azul com padrão losango.
+- Trocar `min-h-[640/720/820px]` por uma altura proporcional: `h-[min(820px,calc(100vw*0.62))]` com `min-h-[560px]`.
+- Isso garante que a seção tenha sempre a mesma proporção visual, evitando "fundo gigante + objetos pequenos".
 
-7. **Por que Jerilifetur?** — título + 3 cards com foto de fundo e texto sobreposto:
-   - Equipe Nativa
-   - Atendimento Completo
-   - Passeios Exclusivos
+### 2. Placas (esquerda)
 
-8. **Jericoacoara Além dos Roteiros** — banner full-width com foto da Pedra Furada e bloco de texto centralizado por cima (sobre preservação, dunas, lagoas).
+- Mostrar a partir de `md` (≥768px) em vez de `sm` — em telas pequenas elas competem demais com o card.
+- Tamanho proporcional à largura: `w-[clamp(180px,22vw,360px)]`, `h-auto`, ancorado em `left-0 bottom-0` (alinhado ao chão como no print, não centralizado verticalmente).
+- Em mobile (<768px): ocultas (sem espaço útil).
 
-9. **Pronto para Embarcar?** — seção CTA azul com mockup de celular à direita, título grande, parágrafo, e dois botões ("Agendar passeio" + "Mensagem Kite Trip").
+### 3. Buggy (direita, na areia)
 
-10. **Footer** — bloco "UNIWERSOTECH" com nome em destaque, links, redes sociais e crédito.
+- Tamanho proporcional à **largura** da seção, não à altura: `w-[clamp(260px,38vw,640px)]`, `h-auto`.
+- Ancorado em `right-[2%] bottom-[4%]` para "pousar" na faixa de areia da foto (não colado no canto).
+- Em mobile pequeno (<480px): reduzir para `w-[60vw]` e mover ligeiramente pra fora (`right-[-4%]`) para não cobrir o card.
 
-## Estilo visual
+### 4. Card de conteúdo
 
-- **Cores**: azul céu (#3FA9F5 aprox.), azul escuro para texto, branco, areia clara como fundo geral. Tokens definidos em `src/styles.css` (sem cores hardcoded nos componentes).
-- **Tipografia**: fonte display marcante (estilo retrô-praia, parecida com a do Figma) para títulos via Google Fonts (ex.: "Bungee" ou "Lilita One"); Inter para corpo.
-- **Texturas**: padrão de losangos sutil em fundos (SVG repetível).
-- **Cards**: cantos arredondados generosos, sombras suaves, fotos com overlay quando houver texto sobreposto.
-- **Responsivo**: mobile-first; grids de 4 colunas viram 2 e depois 1; hero e seções ajustam padding.
+- Largura `max-w-sm` em mobile, `max-w-md` em md+.
+- Posicionamento: centralizado horizontalmente em mobile (sem placas atrás); a partir de `md`, deslocado para a faixa entre placas e buggy usando `ml-[clamp(200px,24vw,380px)]` — alinhado ao mesmo sistema de medida das placas, então nunca se sobrepõe a elas.
+- Padding vertical do wrapper ajustado para acompanhar a nova altura proporcional.
 
-## Conteúdo
+### 5. Breakpoints unificados
 
-- Textos em PT-BR plausíveis para cada tour, card e seção (descrição curta, 1–2 frases).
-- Estrelas de avaliação fixas nos cards de tour (visual).
-- Nomes reais dos pontos turísticos de Jeri.
+Toda a composição passa a usar **três faixas claras**, todas baseadas na mesma lógica:
 
-## Imagens
+| Faixa | Largura | Comportamento |
+|---|---|---|
+| Mobile | <768px | Só fundo + card centralizado + buggy menor no canto |
+| Tablet | 768–1279px | Placas + buggy + card, todos em escala `vw` |
+| Desktop | ≥1280px | Mesma composição, com clamps no máximo |
 
-- Fotos do Unsplash via URLs diretas (buggy, praia, kitesurf, dunas, lagoas, pedra furada, pessoas viajando, mockup de celular).
-- Imagens otimizadas com `loading="lazy"` exceto a hero.
+## Arquivos alterados
 
-## Detalhes técnicos
+- `src/components/landing/Hero.tsx` — reescrita das classes dos 3 `<img>` e do wrapper do card. Sem novos arquivos, sem novas dependências.
 
-- Tudo em `src/routes/index.tsx` (substituindo o placeholder), com componentes auxiliares quebrados em `src/components/landing/` (Header, Hero, ToursSection, TourCard, RideTypes, KiteTransferBand, WhyUs, BeyondRoutes, ReadyCTA, Footer).
-- Tailwind v4 com tokens HSL/oklch no `styles.css`; sem `style={{}}` para cores.
-- Meta tags atualizadas no `__root.tsx` (title "Jerilifetur — Passeios em Jericoacoara", description em PT-BR, og:title/description).
-- Fontes carregadas via `<link>` no head do root.
-- Botões só visuais (sem onClick).
+## Verificação
 
-Após aprovação, implemento tudo de uma vez e você verá a página renderizada no preview.
+Após implementar, testarei nos viewports 375, 768, 1024, 1092 (atual do usuário), 1366 e 1920 via screenshot para confirmar que a composição (placas à esquerda no chão, card no meio, buggy na areia à direita) se mantém idêntica à do print em todas as larguras.
