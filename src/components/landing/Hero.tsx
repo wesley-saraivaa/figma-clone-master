@@ -30,7 +30,7 @@ export function Hero() {
         />
 
         {/* Card + botões agrupados no canto superior esquerdo */}
-        <div className="absolute left-0 top-0 z-20 flex w-full max-w-md flex-col gap-4 px-4 pt-24 sm:max-w-lg sm:px-8 md:pl-[clamp(60px,8vw,140px)] md:pt-28">
+        <div className="absolute left-0 top-0 z-20 flex w-full max-w-md flex-col gap-4 px-4 pt-20 sm:max-w-[460px] sm:px-6 sm:pt-24 md:pl-[clamp(40px,6vw,110px)]">
           <div className="rounded-3xl bg-primary/30 p-6 shadow-card ring-1 ring-card/30 backdrop-blur-md sm:p-7">
             <h1 className="font-display text-4xl leading-[1.05] text-primary-foreground drop-shadow-md sm:text-5xl lg:text-[3.25rem]">
               Descubra
